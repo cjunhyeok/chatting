@@ -2,6 +2,7 @@ package com.chat.chatting.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -19,4 +20,10 @@ public class ChatRoom {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
+
+    @Builder
+    public ChatRoom(String roomTitle, Member member) {
+        this.roomTitle = roomTitle;
+        this.member = member;
+    }
 }
