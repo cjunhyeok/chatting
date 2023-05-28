@@ -21,16 +21,14 @@ public class Chat {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member receiver; // 수신자
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "chat_room_id")
-    private ChatRoom chatRoom;
+    private Boolean isRead;
 
 
     @Builder
-    public Chat(Member sender, Member receiver, ChatRoom chatRoom, String content) {
+    public Chat(Member sender, Member receiver, String content, Boolean isRead) {
         this.content = content;
         this.sender = sender;
         this.receiver = receiver;
-        this.chatRoom = chatRoom;
+        this.isRead = isRead;
     }
 }
