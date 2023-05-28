@@ -21,14 +21,12 @@ public class Member {
     private String username;
     private String password;
     private String nickname;
-    private String state; // 채팅방 접근 상태
 
 
     @Builder
-    public Member(String username, String password, String nickname, String state) {
+    public Member(String username, String password, String nickname) {
         this.username = username;
         this.password = password;
         this.nickname = nickname;
-        this.state = state;
     }
 }
