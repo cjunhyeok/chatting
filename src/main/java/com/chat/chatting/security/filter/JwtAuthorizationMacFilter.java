@@ -48,7 +48,6 @@ public class JwtAuthorizationMacFilter extends OncePerRequestFilter {
             return;
         }
 
-
         // 순수 token 뽑아내기
         String token = header.replace("Bearer ", "");
 

@@ -57,7 +57,6 @@ public class JwtAuthenticationFilter extends AbstractAuthenticationProcessingFil
 
         try {
             jwtToken = securitySigner.getJwtToken(user, jwk);
-            log.info("on success");
             response.addHeader("Authorization", "Bearer " + jwtToken);
         } catch (JOSEException e) {
             throw new RuntimeException(e);
