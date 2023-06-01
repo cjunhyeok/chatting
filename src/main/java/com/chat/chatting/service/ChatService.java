@@ -48,4 +48,8 @@ public class ChatService {
 
         return chatRepository.findChatRooms(findSender);
     }
+
+    public List<Chat> findChatHistory(Long loginMemberId, Long receiverId) {
+        return chatRepository.findChatHistory(loginMemberId, receiverId);
+    }
 }
